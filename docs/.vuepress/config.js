@@ -1,6 +1,7 @@
 module.exports = {
 	title: '蒋鲜生の前端学习笔记',
 	description: '这是一个总结前端知识的网站鸭！',
+	base:'/iview/notes/',
 	  themeConfig: {
 		nav: [
 			{ text: 'Home', link: '/' },
