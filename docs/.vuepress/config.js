@@ -17,20 +17,20 @@ module.exports = {
 			  ]
 			},
 			{
-				title: 'Vue',
-				children: ['./react/react1','./react/react2' ]
+				title: 'Vue基础知识',
+				children: ['./vue/vue基础语法','./vue/vue进阶语法' ]
 			},
 			{
-				title: 'Js',
+				title: 'Js基础知识',
 				children: ['./js/string对象']
 			  },
 			{
-				title: 'React',
+				title: 'React基础知识',
 				children: ['./react/react1','./react/react2' ]
 			},
 			{
-				title: '面试题',
-				children: ['./面试题/跨域的几种方式','./面试题/css水平垂直居中的几种方式']
+				title: '前端常见面试题',
+				children: ['./面试题/跨域的几种方式','./面试题/css水平垂直居中的几种方式','./面试题/vue面试题']
 			}
 		  ]
 	  }

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>css水平垂直居中的几种方式 | 蒋鲜生の前端学习笔记</title>
+    <meta name="generator" content="VuePress 1.5.1">
+    
+    <meta name="description" content="这是一个总结前端知识的网站鸭！">
+    <link rel="preload" href="/iview/notes/assets/css/0.styles.c0acf2c6.css" as="style"><link rel="preload" href="/iview/notes/assets/js/app.27e72a54.js" as="script"><link rel="preload" href="/iview/notes/assets/js/2.6689eb3b.js" as="script"><link rel="preload" href="/iview/notes/assets/js/9.3cf3b6a5.js" as="script"><link rel="prefetch" href="/iview/notes/assets/js/10.a6ad7838.js"><link rel="prefetch" href="/iview/notes/assets/js/11.01a8c42e.js"><link rel="prefetch" href="/iview/notes/assets/js/3.f3f6d0a6.js"><link rel="prefetch" href="/iview/notes/assets/js/4.1a9da7e5.js"><link rel="prefetch" href="/iview/notes/assets/js/5.a1f3c9b0.js"><link rel="prefetch" href="/iview/notes/assets/js/6.d2f1a6af.js"><link rel="prefetch" href="/iview/notes/assets/js/7.a85ec361.js"><link rel="prefetch" href="/iview/notes/assets/js/8.35eaada0.js">
+    <link rel="stylesheet" href="/iview/notes/assets/css/0.styles.c0acf2c6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/iview/notes/" class="home-link router-link-active"><!----> <span class="site-name">蒋鲜生の前端学习笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/iview/notes/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/iview/notes/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  External
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/iview/notes/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/iview/notes/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  External
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前言</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/iview/notes/" aria-current="page" class="sidebar-link">关于我</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue基础知识</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Js基础知识</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>React基础知识</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>前端常见面试题</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/iview/notes/面试题/跨域的几种方式.html" class="sidebar-link">跨域问题</a></li><li><a href="/iview/notes/面试题/css水平垂直居中的几种方式.html" class="active sidebar-link">css水平垂直居中的几种方式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/iview/notes/面试题/css水平垂直居中的几种方式.html#_1-flex实现" class="sidebar-link">1. flex实现</a></li><li class="sidebar-sub-header"><a href="/iview/notes/面试题/css水平垂直居中的几种方式.html#_2-positon-margin实现" class="sidebar-link">2. positon,margin实现</a></li><li class="sidebar-sub-header"><a href="/iview/notes/面试题/css水平垂直居中的几种方式.html#_3-position-transform实现" class="sidebar-link">3. position,transform实现</a></li><li class="sidebar-sub-header"><a href="/iview/notes/面试题/css水平垂直居中的几种方式.html#_4-display-table-cell实现" class="sidebar-link">4. display: table-cell实现</a></li><li class="sidebar-sub-header"><a href="/iview/notes/面试题/css水平垂直居中的几种方式.html#_5-line-height-text-align实现-局限性：里面必须是-dispaly-inline-否则不生效" class="sidebar-link">5. line-height  text-align实现   局限性：里面必须是  dispaly inline  否则不生效</a></li><li class="sidebar-sub-header"><a href="/iview/notes/面试题/css水平垂直居中的几种方式.html#_6-横向利用margin-auto，垂直还是利用定位和平移-也不用管里边元素的高度" class="sidebar-link">6. 横向利用margin auto，垂直还是利用定位和平移 也不用管里边元素的高度</a></li><li class="sidebar-sub-header"><a href="/iview/notes/面试题/css水平垂直居中的几种方式.html#_7-最不推荐的方案-通过计算padding-一旦内部元素改变了高度或者宽度，那就惨了" class="sidebar-link">7. 最不推荐的方案  通过计算padding 一旦内部元素改变了高度或者宽度，那就惨了</a></li><li class="sidebar-sub-header"><a href="/iview/notes/面试题/css水平垂直居中的几种方式.html#_8-单行文本好居中-就是让文本的父元素的line-height和高度相同" class="sidebar-link">8.  单行文本好居中 就是让文本的父元素的line-height和高度相同</a></li></ul></li><li><a href="/iview/notes/面试题/vue面试题.html" class="sidebar-link">/面试题/vue面试题.html</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="css水平垂直居中的几种方式"><a href="#css水平垂直居中的几种方式" class="header-anchor">#</a> css水平垂直居中的几种方式</h1> <p>基础结构</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token operator">&lt;</span><span class="token operator">!</span>--基础结构样式--<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+    .parent<span class="token punctuation">{</span>
+        width: <span class="token number">100</span>%<span class="token punctuation">;</span>
+        height: 100vh<span class="token punctuation">;</span>
+        background-color: red<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    .child<span class="token punctuation">{</span>
+        width: <span class="token number">50</span>%<span class="token punctuation">;</span>
+        height: 50vh<span class="token punctuation">;</span>
+        background-color: green<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span>/style<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+
+    <span class="token operator">&lt;</span>div <span class="token assign-left variable">class</span><span class="token operator">=</span><span class="token string">&quot;parent&quot;</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div <span class="token assign-left variable">class</span><span class="token operator">=</span><span class="token string">&quot;child&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>/div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>/body<span class="token operator">&gt;</span>
+
+</code></pre></div><h2 id="_1-flex实现"><a href="#_1-flex实现" class="header-anchor">#</a> 1. flex实现</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>.parent<span class="token punctuation">{</span>
+	display:flex<span class="token punctuation">;</span>
+	justify-conent: center<span class="token punctuation">;</span>
+    align-items: center<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+/*优点：代码量少，三行代码实现水平垂直居中未知宽高子元素*/
+/*缺点：兼容性不是很好，使用flex诸多版本做兼容*/
+
+</code></pre></div><h2 id="_2-positon-margin实现"><a href="#_2-positon-margin实现" class="header-anchor">#</a> 2. positon,margin实现</h2> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+.parent<span class="token punctuation">{</span>
+    position: relative<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+.child<span class="token punctuation">{</span>
+    position: absolute<span class="token punctuation">;</span>
+    top: <span class="token number">0</span><span class="token punctuation">;</span>
+    left: <span class="token number">0</span><span class="token punctuation">;</span>
+    bottom: <span class="token number">0</span><span class="token punctuation">;</span>
+    right: <span class="token number">0</span><span class="token punctuation">;</span>
+    margin: auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span>/style<span class="token operator">&gt;</span>
+/*优点： 兼容性好，可兼容低版本IE，居中不定宽高子元素*/
+/*缺点： 代码量多，实现起来麻烦*/
+
+</code></pre></div><h2 id="_3-position-transform实现"><a href="#_3-position-transform实现" class="header-anchor">#</a> 3. position,transform实现</h2> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+.parent<span class="token punctuation">{</span>
+    position: relative<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+.child<span class="token punctuation">{</span>
+    position: absolute<span class="token punctuation">;</span>
+    top: <span class="token number">50</span>%<span class="token punctuation">;</span>
+    left: <span class="token number">50</span>%<span class="token punctuation">;</span>
+    transform: translate<span class="token punctuation">(</span>-50%,-50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span>/style<span class="token operator">&gt;</span>
+
+</code></pre></div><h2 id="_4-display-table-cell实现"><a href="#_4-display-table-cell实现" class="header-anchor">#</a> 4. display: table-cell实现</h2> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+.parent<span class="token punctuation">{</span>
+    display: table-cell<span class="token punctuation">;</span>
+    text-align: center<span class="token punctuation">;</span>
+    vertical-align: middle<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+.child<span class="token punctuation">{</span>
+    display: inline-block<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span>/style<span class="token operator">&gt;</span>
+
+</code></pre></div><h2 id="_5-line-height-text-align实现-局限性：里面必须是-dispaly-inline-否则不生效"><a href="#_5-line-height-text-align实现-局限性：里面必须是-dispaly-inline-否则不生效" class="header-anchor">#</a> 5. line-height  text-align实现   局限性：里面必须是  dispaly inline  否则不生效</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>
+
+.app<span class="token punctuation">{</span>
+    width: 500px<span class="token punctuation">;</span>
+    height: 500px<span class="token punctuation">;</span>
+    background: greenyellow<span class="token punctuation">;</span>
+    line-height: 500px<span class="token punctuation">;</span>
+    text-align: center<span class="token punctuation">;</span>
+    
+<span class="token punctuation">}</span>
+.app<span class="token operator">&gt;</span>div<span class="token punctuation">{</span>
+    width: 100px<span class="token punctuation">;</span>
+    font-size: 20px<span class="token punctuation">;</span>
+    background: blueviolet<span class="token punctuation">;</span>	
+    display: inline<span class="token punctuation">;</span>				
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="_6-横向利用margin-auto，垂直还是利用定位和平移-也不用管里边元素的高度"><a href="#_6-横向利用margin-auto，垂直还是利用定位和平移-也不用管里边元素的高度" class="header-anchor">#</a> 6. 横向利用margin auto，垂直还是利用定位和平移 也不用管里边元素的高度</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>.app<span class="token punctuation">{</span>
+    width: 500px<span class="token punctuation">;</span>
+    height: 500px<span class="token punctuation">;</span>
+    background: greenyellow<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+.app<span class="token operator">&gt;</span>div<span class="token punctuation">{</span>
+    background: blueviolet<span class="token punctuation">;</span>	
+	position:relative<span class="token punctuation">;</span>
+    top: <span class="token number">50</span>%<span class="token punctuation">;</span>
+    transform: translateY<span class="token punctuation">(</span>-50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	margin:0 auto<span class="token punctuation">;</span>			
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="_7-最不推荐的方案-通过计算padding-一旦内部元素改变了高度或者宽度，那就惨了"><a href="#_7-最不推荐的方案-通过计算padding-一旦内部元素改变了高度或者宽度，那就惨了" class="header-anchor">#</a> 7. 最不推荐的方案  通过计算padding 一旦内部元素改变了高度或者宽度，那就惨了</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>.app<span class="token punctuation">{</span>
+    width: 500px<span class="token punctuation">;</span>
+    height: 500px<span class="token punctuation">;</span>
+    background: greenyellow<span class="token punctuation">;</span>
+    box-sizing: border-box<span class="token punctuation">;</span>
+    padding-left: 200px<span class="token punctuation">;</span>
+    padding-top: 200px<span class="token punctuation">;</span>											
+<span class="token punctuation">}</span>
+.app<span class="token operator">&gt;</span>div<span class="token punctuation">{</span>
+    width: 100px<span class="token punctuation">;</span>
+    height: 100px<span class="token punctuation">;</span>
+    font-size: 20px<span class="token punctuation">;</span>
+    background: blueviolet<span class="token punctuation">;</span>	
+    
+<span class="token punctuation">}</span> 
+</code></pre></div><h2 id="_8-单行文本好居中-就是让文本的父元素的line-height和高度相同"><a href="#_8-单行文本好居中-就是让文本的父元素的line-height和高度相同" class="header-anchor">#</a> 8.  单行文本好居中 就是让文本的父元素的line-height和高度相同</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>.app<span class="token punctuation">{</span>
+    width: 500px<span class="token punctuation">;</span>
+    height: 500px<span class="token punctuation">;</span>
+    background: greenyellow<span class="token punctuation">;</span>		
+    text-align: center<span class="token punctuation">;</span>
+    line-height: 500px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+.app<span class="token operator">&gt;</span>div<span class="token punctuation">{</span>
+    width: 100px<span class="token punctuation">;</span>
+    height: 100px<span class="token punctuation">;</span>
+    font-size: 20px<span class="token punctuation">;</span>
+    background: blueviolet<span class="token punctuation">;</span>	
+    display: inline<span class="token punctuation">;</span>			
+<span class="token punctuation">}</span> 
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/iview/notes/面试题/跨域的几种方式.html" class="prev">
+        跨域问题
+      </a></span> <span class="next"><a href="/iview/notes/面试题/vue面试题.html">
+        /面试题/vue面试题.html
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/iview/notes/assets/js/app.27e72a54.js" defer></script><script src="/iview/notes/assets/js/2.6689eb3b.js" defer></script><script src="/iview/notes/assets/js/9.3cf3b6a5.js" defer></script>
+  </body>
+</html>
