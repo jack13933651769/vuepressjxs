@@ -16,17 +16,17 @@ module.exports = {
 				'/',
 			  ]
 			},
-			{
-				title: 'Vue基础知识',
-				children: ['./vue/vue基础语法','./vue/vue进阶语法' ]
-			},
+			// {
+			// 	title: 'Vue基础知识',
+			// 	children: ['./vue/VueBasis','./vue/VueAdvanced']
+			// },
 			{
 				title: 'Js基础知识',
-				children: ['./js/string对象']
+				children: ['./js/string对象.md']
 			  },
 			{
 				title: 'React基础知识',
-				children: ['./react/react1','./react/react2' ]
+				children: ['./react/react1','./react/react2']
 			},
 			{
 				title: '前端常见面试题',
