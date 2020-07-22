@@ -92,7 +92,7 @@ wach:
 
 利用 Obejct.defineProperty 劫持对象的访问器，在属性值发生变化时我们可以获取变化，然后根据变化进行后续响应，在Vue3.0中通过Proxy代理对象进行类似的操作。
 
-``` bash
+``` javascript
 //这是将要被劫持的对象
 
 const data = {
@@ -185,7 +185,7 @@ diff程可以概括为：oldCh和newCh个有两个头尾的变量Startldx和Endd
 快速：key的唯一性可以被Map树结构充分利用，相比于遍历查找的时间复杂度O(n),Map的时间复杂度仅仅为O(1)</br>
 
 
-```bash
+```javascript
 
 function createKeyToOldIdx(chilren,beginIdx,endIdx) {
 	let i,key

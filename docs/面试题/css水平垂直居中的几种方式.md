@@ -2,7 +2,7 @@
 
 基础结构
 
-```bash
+```css
 <!--基础结构样式-->
 <style>
     .parent{
@@ -27,7 +27,7 @@
 
 ## 1. flex实现
 
-```bash
+```css
 .parent{
 	display:flex;
 	justify-conent: center;
@@ -42,7 +42,7 @@
 ## 2. positon,margin实现
 
 
-```bash
+```css
 <style>
 .parent{
     position: relative;
@@ -63,7 +63,7 @@
 
 ## 3. position,transform实现
 
-```bash
+```css
 <style>
 .parent{
     position: relative;
@@ -81,7 +81,7 @@
 ## 4. display: table-cell实现
 
 
-```bash
+```css
 <style>
 .parent{
     display: table-cell;
@@ -97,7 +97,7 @@
 
 ## 5. line-height  text-align实现   局限性：里面必须是  dispaly inline  否则不生效
 
-```bash
+```css
 
 
 .app{
@@ -119,7 +119,7 @@
 
 ## 6. 横向利用margin auto，垂直还是利用定位和平移 也不用管里边元素的高度
 
-```bash
+```css
 .app{
     width: 500px;
     height: 500px;
@@ -137,7 +137,7 @@
 
 ## 7. 最不推荐的方案  通过计算padding 一旦内部元素改变了高度或者宽度，那就惨了
 
-```bash
+```css
 .app{
     width: 500px;
     height: 500px;
@@ -158,7 +158,7 @@
 
 
 ## 8.  单行文本好居中 就是让文本的父元素的line-height和高度相同
-```bash
+```css
 .app{
     width: 500px;
     height: 500px;
