@@ -265,10 +265,234 @@ const router = new VueRouter({
 </template>
 ```
 
+* 使用v-show复用DOM
+```vue
+<template>
+	<div class="cell">
+	<!-- 这种情况用v-show复用DOM，比v-if效果好 -->
+		<div>
+			<Heavy :n="10000" />
+		</div>
+		<section v-show="!value" class="off">
+			<Heavy :n="10000">
+		</section>
+	</div>
+</template>
+```
+* v-for 遍历避免同时使用v-if
+```vue
+<template>
+	<ul>
+		<li
+		  v-for="user in activeUsers"
+		  :key="user.id">
+		  {{user.name}}
+		</li>
+	</ul>
+</template>
+<script>
+	export default {
+		computed:{
+			activeUsers:function() {
+				return this.users.filer(function(user){
+					return user.isActive
+				})
+			}
+		}
+	}
+</script>
+```
 
+* 长列表性能优化
+  如果列表时纯粹的数据展示，不会有任何改变，就不需要做响应化
+```js
+	export default	{
+		data:() => ({
+			users:[]
+		}),
+		async created() {
+			const users = await axios.get("/api/users");
+			this.users = Object.freeze(users);
+		}
+	}
+```
+  如果是大数据长列表，可采用虚拟滚动，只渲染少部分区域的内容
+```vue
+ <recycle-scroller
+	class="items"
+	:items="items"
+	:item-size="24"
+	>
+	<template v-slot="{ item }">
+		<FetchItemView 
+		:item ="item"
+		@vote="voteItem(item)"
+		/>
+	</template>
+ </recycle-scroller>
+```
 
+* 事件的销毁
 
+Vue组件销毁时，会自动解绑他的全部指令及事件监听器，但是仅限于组件本身的事件。
 
+```js
+created() {
+	this.timer = setInterval(this.refresh,2000)
+},
+beforeDestroy(){
+	clearInterval(this.timer)
+}
+
+```
+
+* 图片懒加载
+
+对于图片过多的页面，为了加速页面加载速度，所以很多时候我们需要将页面内未出现在可视区域内的图片先不做加载，等到滚动到可视区域后再去加载。
+```html
+<img v-lazy="/static/img/1.png">
+```
+
+* 第三方插件按需引入
+
+像element-ui这样的第三方组件库可以按需引入避免体积太大。
+
+```js
+import Vue from 'vue';
+import {Button ,Select} from 'element-ui'
+
+Vue.use(Button)
+Vue.use(Select)
+
+```
+
+* 无状态的组件标记为函数式组件
+```vue
+<template functional>
+	<div class="cell">
+		<div v-if="props.value" class="on"></div>
+		<section v -else class="off"></section>
+	</div>
+</template>
+<script>
+export default {
+	props:['value']
+}
+</script>
+```
+* 子组件分割
+```vue
+<template>
+	<div>
+		<childComp />
+	</div>
+</template>
+<script>
+	export default {
+		components: {
+			ChildComp: {
+				methods: {
+					heavy () { /* 耗时任务 */ }
+				},
+				render (h) {
+					return h('div', this.heavy())
+				}
+			}
+		}
+	}
+</script>
+```
+* 变量本地化
+```vue
+<template>
+	<div :style="{opactiy:start / 300}">
+		{{result}}
+	</div>
+</template>
+<script>
+import {heavy} from '@/utils'
+export default {
+	props:['start'],
+	computed:{
+		base () {
+			return 42
+		},
+		result () {
+			const base = this.base //不要频繁引入this.base
+			let result = this.start
+			for(let i = 0; i<1000; i++){
+				result += heavy(base)
+			}
+			return result
+		}
+	}
+}
+</script>
+```
+
+*SSR
+
+## 13.你知道nextTick的原理吗？
+
+nextTick官方文档的解释，它可以在DOM更新完毕之后执行一个回调
+
+```js
+//修改数据
+vm.msg = 'Hello'
+//DOM还没更新
+Vue.nextTick(function(){
+	//DOM更新了
+})
+```
+
+尽管MVVM框架并不推荐访问DOM，但有时候确实会有这样的需求，尤其是和第三方插件进行配合的时候，免不了要进行DOM操作。而nextTick就提供了一个桥梁，确保我们操作的是更新后的DOM。
+
+* vue如何检测到DOM更新完毕呢？
+
+能监听到DOM改动的API：MutationObserver
+
+* 理解MutationObserver
+
+MutationObserver是HTML5新增的属性，用于监听DOM修改事件，能够监听到节点的属性、文本内容、子节点等的改动，是一个功能强大的利器。
+
+```js
+//Mutationobserver基本用法
+var observer = new MutationOberserver(function(){
+	//这里是回调函数
+	console.log('dom被修改了！');
+})
+var article = document.querySelector('article');
+observer.observer(article);
+```
+
+vue是不是用MutationObserver来监听DOM更新完毕的呢？
+
+vue的源码中实现nextTick的地方：
+
+```js
+
+//vue@2.2.5/src/core/util/env.js
+if (typeof MutationObserver !== 'undefined' && (isNative(MutationObserver) ||
+MutationObserver.toString() === '[object MutationObserverConstructor]')) {
+	var counter = 1
+	var observer = new MutationObserver(nextTickHandler)
+	var textNode = document.createTextNode(String(counter))
+	observer.observe(textNode, {
+	characterData: true
+	})
+	timerFunc = () => {
+	counter = (counter + 1) % 2
+	textNode.data = String(counter)
+	}
+}
+
+```
+
+* 事件循环（Event Loop）
+
+在js的运行环境中，通常伴随这很多事件的发生，比如用户点击，用户渲染、脚本执行、网络请求、等等。为了协调这些事件的处理、浏览器使用事件循环机制。
+
+简要来说，事件循环会维护一个或多个任务队列（task queues），以上剃刀的事件作为任务源往队列中加入任务。有一个持续执行的县城来处理这些任务，每执行完一个就从队列中移除它，这就是一次事件循环。
 
 
 
