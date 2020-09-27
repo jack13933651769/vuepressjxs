@@ -7,12 +7,16 @@ let arr = [
 	  ]
 	},
 	{
+		title: '移动端配置',
+		children: ['./mobile/mobileapp.md']
+	},
+	{
 		title: '工作笔记',
 		children: ['./work/20200909.md']
 	},
 	{
 		title: 'Js基础知识',
-		children: ['./js/string对象.md']
+		children: ['./js/变量声明.md','./js/string对象.md']
 	  },
 	{
 		title: 'React基础知识',
