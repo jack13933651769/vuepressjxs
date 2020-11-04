@@ -16,7 +16,7 @@ let arr = [
 	},
 	{
 		title: 'Js基础知识',
-		children: ['./js/变量声明.md','./js/数据类型.md','./js/string对象.md','./js/操作符及语句.md','./js/变量作用域与内存.md']
+		children: ['./js/变量声明.md','./js/数据类型.md','./js/string对象.md','./js/操作符及语句.md','./js/变量作用域与内存.md','./js/基本引用类型.md','./js/集合引用类型.md']
 	  },
 	{
 		title: 'React基础知识',
