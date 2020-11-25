@@ -7,6 +7,10 @@ let arr = [
 	  ]
 	},
 	{
+		title: '常用软件及网站和前端插件',
+		children: ['./web/web.md']
+	},
+	{
 		title: '移动端配置',
 		children: ['./mobile/mobileapp.md']
 	},
@@ -25,6 +29,10 @@ let arr = [
 	{
 		title: '前端常见面试题',
 		children: ['./面试题/跨域的几种方式','./面试题/css水平垂直居中的几种方式','./面试题/vue面试题','./面试题/JS面试题','./面试题/防抖和节流函数']
+	},
+	{
+		title: 'css动效',
+		children: ['./css动效/盒子向下弹出']
 	}
   ]
 module.exports = {
