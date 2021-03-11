@@ -36,6 +36,7 @@ let arr = [
 	}
   ]
 module.exports = {
+	port: '8099', //端口号
 	title: '蒋鲜生の前端学习笔记',
 	description: '这是一个总结前端知识的网站鸭！',
 	base:'/iview/notes/',
