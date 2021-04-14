@@ -33,6 +33,10 @@ let arr = [
 	{
 		title: 'css动效',
 		children: ['./css动效/盒子向下弹出']
+	},
+	{
+		title: 'sql',
+		children: ['./sql/单表查询.md']
 	}
   ]
 module.exports = {
