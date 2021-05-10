@@ -40,6 +40,10 @@ module.exports = {
 	"children":["./工作笔记/20200909.md"]},
 	{"title":"常用软件及网站和前端插件",
 	"children":["./常用软件及网站和前端插件/web.md"]},
+	{"title":"每天一个英语题型",
+	"children":["./每天一个英语题型/20210510.md"]},
+	{"title":"每日一个面试题",
+	"children":["./每日一个面试题/js 数组对象扁平化.md"]},
 	{"title":"移动端配置",
 	"children":["./移动端配置/mobileapp.md"]}]
 		  

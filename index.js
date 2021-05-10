@@ -124,7 +124,6 @@ function TraverseDirectory() {
 	  }
   }
 `
-
   console.log(text)
   fs.writeFile('./docs/.vuepress/config.js', text, 'utf8', (err) => {
     if (err) throw err;
