@@ -30,7 +30,6 @@ function flat(array){
     return arr;
 }
 flat(arr);
-
 ```
 
   非递归实现思路
@@ -62,6 +61,24 @@ function flat(array){
 }
 flat(arr);
 
+
+
+function flat(array) {
+    let arr = [];
+    let queue = array;
+    if(!queue.length){
+        return [];
+    }
+    for(;queue.length;){
+        let val = queue.pop();
+        if(Array.isArray(val)){
+            queue.push(...val)
+        }else {
+            arr.unshift(val)
+        }
+    }
+    return arr;
+}
 ```
 
 ## 对象扁平化
@@ -156,7 +173,6 @@ function flat(object){
         });
     }
     return res;
-
 
 console.log(flat(object))
 ```
